@@ -1,7 +1,7 @@
 import requests
 
 session_with_login = requests.Session()
-session_with_login.auth = ('qing0git', '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')
+session_with_login.auth = ('', '')
 
 OWNER = 'xingyizhou'
 REPO = 'CenterNet'

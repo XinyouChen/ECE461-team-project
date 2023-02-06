@@ -3,7 +3,7 @@ import re
 from bs4 import BeautifulSoup
 
 session_with_login = requests.Session()
-session_with_login.auth = ('qing0git', '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')
+session_with_login.auth = ('', '')
 
 OWNER = 'xingyizhou'
 REPO = 'CenterNet'
@@ -15,7 +15,7 @@ def get_lines_of_code(url):
     slocs = 0
 
     for file in files:
-        if file['type'] == 'file' and '.py' in file['name']:
+        if file['type'] == 'file':
             html_source_code = requests.get(file['html_url'])
             soup = BeautifulSoup(source_code.text, 'html.parser')
             string_contain_sloc = soup.findAll(string=re.compile(r'\(\d+ sloc\)'))[0]
